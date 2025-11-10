@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+
+
+@theme inline {
+  --color-primary: #1c1c1c;
+
+
+}
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+     
+
+}
+
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
