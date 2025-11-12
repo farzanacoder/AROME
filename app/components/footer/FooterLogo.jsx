@@ -7,10 +7,10 @@ import { IoLogoPinterest } from 'react-icons/io'
 
 export default function FooterLogo() {
   return (
-    <div className='flex flex-col gap-10'>
+    <div className='flex flex-col justify-center items-start gap-y-10 w-[20%]'>
         <img src="/logo_w.jpg" alt="Footer Logo" width={140} height={50} />
 
-        <p>Arome® was founded on the belief that wellness is more than just a necessity—it's a powerful expression of self-care and vitality.</p>
+        <p className='text-lg'>Arome® was founded on the belief that wellness is more than just a necessity—it's a powerful expression of self-care and vitality.</p>
 
         <div className='flex items-center justify-center gap-2'>
             <Icon icon={FaXTwitter} />
