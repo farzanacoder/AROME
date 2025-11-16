@@ -2,6 +2,8 @@ import React from 'react'
 import Banner from '../layouts/Banner'
 import Items from '../layouts/Items'
 import BestSeller from '../layouts/BestSeller'
+import ScentVideo from '../layouts/ScentVideo'
+import PopularScent from '../layouts/PopularScent'
 
 export default function page() {
   return (
@@ -9,7 +11,8 @@ export default function page() {
         <Banner/>
         <Items/>
         <BestSeller/>
-       
+        <ScentVideo/>
+        <PopularScent/>
     </>
   )
 }
