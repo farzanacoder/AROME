@@ -4,7 +4,10 @@ import SellerCard from '../components/SellerCard'
 import Button from '../components/Button'
 import Image from 'next/image'
 
-export default function ShopLook() {
+export default async function ShopLook() {
+    const res = await fetch('https://dummyjson.com/products?limit=2', { next: { revalidate: 60 } });
+  const data = await res.json();
+  const products = data.products;
   return (
     <section className="my-20">
   <CommonHead className='text-center' Heading="Popular Perfumes"/>
@@ -15,10 +18,19 @@ export default function ShopLook() {
   <div className="container flex w-full h-fit gap-8">
 
     {/* Left side seller cards */}
-    <div className='w-1/2 flex gap-5 mt-10'>
-      <SellerCard />
-      <SellerCard />
-    </div>
+     <div className='w-1/2 flex gap-5 mt-10'>
+          {products.map((product) => (
+            <div key={product.id} className="w-[50%]">
+              <SellerCard 
+                title={product.title}
+                price={product.price}
+                image={product.thumbnail}
+              />
+            </div>
+          ))}
+        </div>
+
+
 
     {/* Right side image */}
     <div className='w-1/2 mt-10 h-[420px] rounded-lg overflow-hidden'>
