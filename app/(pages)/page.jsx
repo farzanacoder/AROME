@@ -7,6 +7,7 @@ import PopularScent from '../layouts/PopularScent'
 import Brand from '../layouts/Brand'
 import Quality from '../layouts/Quality'
 import ShopLook from '../layouts/ShopLook'
+import Customers from '../layouts/Customers'
 
 export default function page() {
   return (
@@ -19,6 +20,7 @@ export default function page() {
         <Brand/>
         <Quality/>
         <ShopLook/>
+        <Customers/>
     </>
   )
 }
