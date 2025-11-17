@@ -1,25 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
-
-
 
 @theme inline {
   --color-primary: #1c1c1c;
-
-
 }
 
-
-
-body {
-  font-family: "Playfair Display", serif;
-
-     
-
+@layer base {
+  body {
+    font-family: "Playfair Display", serif;
+  }
 }
-
 
 .container {
-  max-width: 80%;
+  max-width: 95%;
   margin: 0 auto;
 }

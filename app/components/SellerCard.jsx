@@ -8,8 +8,8 @@ import Icon from './Icon'
 
 export default function SellerCard() {
   return (
-    <div className='w-[20%] relative h-fit group'>
-        <div className='w-[350px]  h-[420px] overflow-hidden rounded-xl cursor-pointer'>
+    <div className='w-[23%] relative h-fit group'>
+        <div className='w-full  h-[420px] overflow-hidden rounded-xl cursor-pointer'>
         <Image src="/11.jpg" width={270} height={350} alt="Seller Image" className='w-full h-full'/>
         </div>
 

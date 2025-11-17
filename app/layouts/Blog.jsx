@@ -18,7 +18,7 @@ export default function Blog() {
           </button>
         </div>
 
-        <div className="flex">
+        <div className="flex gap-7">
             <CommonBlog />
         <CommonBlog />
         <CommonBlog />
