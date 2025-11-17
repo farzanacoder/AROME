@@ -8,7 +8,7 @@ import Icon from './Icon'
 
 export default function SellerCard() {
   return (
-    <div className='w-[23%] relative h-fit group'>
+    <div className='w-full relative h-fit group'>
         <div className='w-full  h-[420px] overflow-hidden rounded-xl cursor-pointer'>
         <Image src="/11.jpg" width={270} height={350} alt="Seller Image" className='w-full h-full'/>
         </div>
@@ -18,9 +18,9 @@ export default function SellerCard() {
             <p className='text-base flex items-center justify-center gap-1.5 text-white bg-[#5d3754] w-fit h-fit px-3 rounded-2xl'>Save <span>50%</span></p>
         </div>
         <div className="hidden group-hover:block">
-          <Icon Iconn={FiEye} className="top-0 -right-5"/>
-         <Icon Iconn={FaRegHeart} className="top-[73px] -right-5"/>
-         <Icon Iconn={BsHandbag} className="top-32 -right-5"/>
+          <Icon Iconn={FiEye} className="top-0 right-5"/>
+         <Icon Iconn={FaRegHeart} className="top-[73px] right-5"/>
+         <Icon Iconn={BsHandbag} className="top-32 right-5"/>
         </div>
 
 

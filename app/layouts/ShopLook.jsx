@@ -7,26 +7,32 @@ import Image from 'next/image'
 export default function ShopLook() {
   return (
     <section className="my-20">
-      <CommonHead className='text-center' Heading="Popular Perfumes"/>
-      <p className='text-xl text-center my-3 text-[#5d3754]'>Each fragrance crafted to complement unique essence</p>
+  <CommonHead className='text-center' Heading="Popular Perfumes"/>
+  <p className='text-xl text-center my-3 text-[#5d3754]'>
+    Each fragrance crafted to complement unique essence
+  </p>
 
-    <div className="container flex h-fit">
+  <div className="container flex w-full h-fit gap-8">
 
-     <div className='mt-10 flex gap-5 w-[60%]'>
-        <div className=" ">
-            <SellerCard/>
-         </div>
-        <div className=" ">
-            <SellerCard/>
-         </div>
-     </div>
-
-     <div className='flex mt-10 justify-center w-[40%] rounded-lg overflow-hidden'>
-        <Image src="/perfume.jpg" width={800} height={50} alt="brand logo"/>
-     </div>
-
+    {/* Left side seller cards */}
+    <div className='w-1/2 flex gap-5 mt-10'>
+      <SellerCard />
+      <SellerCard />
     </div>
-      
-    </section>
+
+    {/* Right side image */}
+    <div className='w-1/2 mt-10 h-[420px] rounded-lg overflow-hidden'>
+      <Image 
+        src="/perfume.jpg" 
+        width={1000} 
+        height={420} 
+        alt="brand logo"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+  </div>
+</section>
+
   )
 }

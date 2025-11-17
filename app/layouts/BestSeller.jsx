@@ -16,11 +16,12 @@ export default function BestSeller() {
 
 
      <div className='mt-10 flex flex-wrap items-center justify-between gap-7'>
-      <SellerCard/>
-      <SellerCard/>
-      <SellerCard/>
-      <SellerCard/>
-     </div>
+  <div className="w-[23%]"><SellerCard /></div>
+  <div className="w-[23%]"><SellerCard /></div>
+  <div className="w-[23%]"><SellerCard /></div>
+  <div className="w-[23%]"><SellerCard /></div>
+</div>
+
 
     </div>
       
