@@ -25,7 +25,6 @@ export default function Video() {
           src="https://www.youtube.com/embed/_9VUPq3SxOc?si=PlfkUi0hH4fQjUcA"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
         ></iframe>
         </button>
         
