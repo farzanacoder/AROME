@@ -5,7 +5,7 @@ import { MdVerified } from 'react-icons/md'
 
 export default function CustomerItem() {
   return (
-    <div className='rounded-lg shadow-lg flex flex-col items-start p-10 w-[30%] mx-auto'>
+    <div className='rounded-lg shadow-lg bg-white flex flex-col items-start p-10 w-[30%] mx-auto'>
         <p className='text-lg text-[#616161] mb-6'>“Arome supplements have been a game-changer for me! I feel more energized and healthier than ever. Highly recommend!”</p>
         <div className='flex items-center justify-center gap-1 text-[#5d3754]'>
                     <IoMdStar />

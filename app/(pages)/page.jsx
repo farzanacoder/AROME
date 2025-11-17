@@ -8,6 +8,7 @@ import Brand from '../layouts/Brand'
 import Quality from '../layouts/Quality'
 import ShopLook from '../layouts/ShopLook'
 import Customers from '../layouts/Customers'
+import Blog from '../layouts/Blog'
 
 export default function page() {
   return (
@@ -21,6 +22,7 @@ export default function page() {
         <Quality/>
         <ShopLook/>
         <Customers/>
+        <Blog/>
     </>
   )
 }
