@@ -4,6 +4,7 @@ import Items from '../layouts/Items'
 import BestSeller from '../layouts/BestSeller'
 import ScentVideo from '../layouts/ScentVideo'
 import PopularScent from '../layouts/PopularScent'
+import Brand from '../layouts/Brand'
 
 export default function page() {
   return (
@@ -13,6 +14,7 @@ export default function page() {
         <BestSeller/>
         <ScentVideo/>
         <PopularScent/>
+        <Brand/>
     </>
   )
 }

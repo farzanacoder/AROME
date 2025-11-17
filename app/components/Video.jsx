@@ -24,9 +24,7 @@ export default function Video() {
           height="350"
           src="https://www.youtube.com/embed/_9VUPq3SxOc?si=PlfkUi0hH4fQjUcA"
           title="YouTube video player"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
         </button>
