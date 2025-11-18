@@ -3,10 +3,11 @@ import FooterLogo from '@/app/components/footer/FooterLogo'
 import Title from '../components/Title'
 import FooterList from '../components/footer/FooterList'
 import { FiArrowRight } from 'react-icons/fi'
+import FooterCom from '../components/footer/FooterCom'
 
 export default function Footer() {
   return (
-      <footer className="bg-[#5d3754] py-52">
+      <footer className="bg-[#5d3754] pt-16">
         <div className=" container text-white flex flex-col lg:flex-row items-start justify-between gap-4">
           <FooterLogo />
 
@@ -43,6 +44,10 @@ export default function Footer() {
 
         </div>
         </div>
+       
+       <div className="container pt-16">
+         <FooterCom/>
+       </div>
 
       </footer>
   )
