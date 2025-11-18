@@ -10,7 +10,7 @@ export default async function BestSeller() {
   return (
     <section className="my-20">
       <div className="container">
-        <CommonHead Heading="Our Best Sellers" />
+        <CommonHead className='text-center' Heading="Our Best Sellers" />
 
         <div className='text-center mt-7 flex justify-center items-center gap-10'>
           <h1 className='text-xl font-bold text-[#555555] border-b border-transparent hover:text-[#5d3754] hover:border-[#5d3754] duration-300 cursor-pointer'>Women</h1>

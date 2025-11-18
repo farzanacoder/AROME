@@ -6,6 +6,7 @@ import { GoPerson } from "react-icons/go";
 import { FaRegHeart } from "react-icons/fa";
 import { BsEnvelope, BsHandbag } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -36,16 +37,17 @@ export default function Header() {
       <div className="container flex items-center justify-between">
         {/* -------- nav ----- */}
         <nav className="flex items-center gap-4 w-[25%] justify-between py-6">
-          <List list="Home" />
-          <List list="Shop" />
-          <List list="Blog" />
-          <List list="Pages" />
-          <List list="Contact" />
+          <List link="/" list="Home" />
+          <List link="/shop" list="Shop" />
+          <List link="/blog" list="Blog" />
+          <List link="/pages" list="Pages" />
+          <List link="/contact" list="Contact" />
         </nav>
 
         {/* -------- logo ----- */}
-        <Image src="/logo.jpg" alt="Logo" width={140} height={50} />
-
+        <Link href={'/'}>
+                 <Image src="/logo.jpg" alt="Logo" width={140} height={50} />
+        </Link>
 
 
         {/* -------- search and cart ----- */}
