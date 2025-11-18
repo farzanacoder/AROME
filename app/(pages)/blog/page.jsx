@@ -2,8 +2,10 @@ import Image from "next/image";
 import React from "react";
 import CommonHead from "../../components/CommonHead";
 import CommonPara from "../../components/CommonPara";
-import { GoPerson } from "react-icons/go";
+import { GoDownload, GoPerson } from "react-icons/go";
 import { LiaFacebookF } from "react-icons/lia";
+import { FaXTwitter } from "react-icons/fa6";
+import { BsPinterest } from "react-icons/bs";
 
 export default function page() {
   return (
@@ -20,12 +22,10 @@ export default function page() {
         </div>
 
         <div className="flex flex-col items-start w-[50%] mx-auto justify-center ">
-
           <CommonHead
             className="mt-10 mb-5"
             Heading="Proper way to apply perfumes 2025"
           />
-
 
           <div className="flex gap-7 mt-5 mb-2.5 text-lg text-[#636358]">
             <div className="flex gap-2 items-center ">
@@ -38,8 +38,6 @@ export default function page() {
               <p className="">Feb 28, 2025</p>
             </div>
           </div>
-
-
 
           <CommonPara
             className="!text-[#636358]"
@@ -57,25 +55,50 @@ export default function page() {
             className="my-6 rounded-lg "
           />
           <div className="bg-[#5d3754] text-white p-7 w-[95%] mx-auto rounded-lg mb-6">
-            <p className="text-lg">Bethany Hamilton lives in Hawaii — her passion is surfing — her dream is to become a professional surfer. She spends every available minute in the water, even home-schooling so she can have more time to pursue her vision. At 8 years of age she entered her first major competition taking the division championships that year. </p>
+            <p className="text-lg">
+              Bethany Hamilton lives in Hawaii — her passion is surfing — her
+              dream is to become a professional surfer. She spends every
+              available minute in the water, even home-schooling so she can have
+              more time to pursue her vision. At 8 years of age she entered her
+              first major competition taking the division championships that
+              year.{" "}
+            </p>
           </div>
-           <CommonPara
-            className="!text-[#636358]"
+          <CommonPara
+            className="!text-[#636358] "
             para="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly believable. Store your odds and ends in a breezy, beach house style with these stylish agora bins! Handcrafted of 100% jute for a natural, casual feel, these baskets are perfect for plants, laundry, toys…"
           />
 
-          <div className="flex gap-5 mt-10 text-2xl text-[#5d3754] cursor-pointer">
-           <LiaFacebookF/>
-            Facebook
+          <div className="flex gap-4">
+            <div className="flex gap-5 mt-10 text-lg items-center text-[#5d3754] cursor-pointer">
+              <LiaFacebookF />
+              <p className="hover:underline cursor-pointer duration-700">
+                Facebook
+              </p>
+            </div>
+            <div className="flex gap-5 mt-10 text-lg items-center text-[#5d3754] cursor-pointer">
+              <FaXTwitter />
+              <p className="hover:underline cursor-pointer duration-700">
+                Twitter
+              </p>
+            </div>
+            <div className="flex gap-5 mt-10 text-lg items-center text-[#5d3754] cursor-pointer">
+              <BsPinterest />
+              <p className="hover:underline cursor-pointer duration-700">
+                Pin it
+              </p>
+            </div>
+            <div className="flex gap-5 mt-10 text-lg items-center text-[#5d3754] cursor-pointer">
+              <GoDownload />
+              <p className="hover:underline cursor-pointer duration-700">
+                Share
+              </p>
+            </div>
           </div>
-      
+
+          
         </div>
       </div>
     </section>
   );
 }
-
-Facebook
-Twitter
-Pin it
-Share

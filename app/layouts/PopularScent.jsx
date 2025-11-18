@@ -2,6 +2,7 @@ import React from 'react'
 import CommonHead from '../components/CommonHead'
 import SellerCard from '../components/SellerCard'
 import Button from '../components/Button'
+import Link from 'next/link';
 
 export default async function PopularScent() {
     const res = await fetch('https://dummyjson.com/products?limit=4', { next: { revalidate: 60 } });
@@ -30,9 +31,9 @@ export default async function PopularScent() {
             </div>
 
 
-     <div className='flex justify-center mt-12'>
+     <Link href='/shop' className='flex justify-center mt-12'>
       <Button btn="View All" className=" uppercase"/>
-     </div>
+     </Link>
 
     </div>
       
