@@ -14,11 +14,10 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const [active, setActive] = useState(false); // dropdown active state
+  const [active, setActive] = useState(false); 
 
-  const pathname = usePathname(); // track current page
+  const pathname = usePathname(); 
 
-  // Hide dropdown on navigation
   useEffect(() => {
     setActive(false);
     setQuery("");
@@ -100,7 +99,7 @@ export default function Header() {
                   key={item.id}
                   href={`/shop/${item.id}`}
                   className="flex items-center gap-3 p-2 hover:bg-gray-100 rounded-lg"
-                  onClick={() => setActive(false)} // hide dropdown on click
+                  onClick={() => setActive(false)} 
                 >
                   <img src={item.thumbnail} className="w-12 h-12 rounded" />
                   <p className="text-gray-800">{item.title}</p>
@@ -112,7 +111,7 @@ export default function Header() {
 
         {/* Icons */}
         <div className="flex items-center justify-center gap-3 text-2xl">
-          <GoPerson />
+          <Link href={'/login'}><GoPerson /></Link>
           <FaRegHeart />
           <BsHandbag />
         </div>
