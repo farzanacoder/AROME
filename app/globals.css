@@ -14,3 +14,16 @@
   max-width: 95%;
   margin: 0 auto;
 }
+
+
+/* Normal dot */
+        .swiper-pagination-bullet {
+          background: #ffffff !important;
+          opacity: 0.6 !important;
+        }
+
+        /* Active dot */
+        .swiper-pagination-bullet-active {
+          background: black !important; 
+          opacity: 1 !important;
+        }

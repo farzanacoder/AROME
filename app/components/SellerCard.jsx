@@ -9,7 +9,7 @@ import Icon from './Icon'
 export default function SellerCard({ title, price, image, discount }) {
   return (
     <div className='w-full relative h-fit group'>
-      <div className='w-full h-[360px] overflow-hidden rounded-xl cursor-pointer'>
+      <div className='w-full h-[360px] bg-[#fbf0ef] overflow-hidden rounded-xl cursor-pointer'>
         <Image src={image} width={270} height={350} alt={title} className='w-full h-full object-cover'/>
       </div>
 
