@@ -15,7 +15,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function Banner() {
   return (
-    <section>
+    <section className='my-10'>
 
       <Swiper
         pagination={{ dynamicBullets: true }}
@@ -28,15 +28,15 @@ export default function Banner() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <Image src={BannerImage} alt="Banner Image" className="w-full h-[400px] object-cover" />
+          <Image src={BannerImage} alt="Banner Image" className="w-full h-[70vh] object-cover" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <Image src={BannerImage1} alt="Banner Image" className="w-full h-[400px] object-cover" />
+          <Image src={BannerImage1} alt="Banner Image" className="w-full h-[70vh] object-cover" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <Image src={BannerImage2} alt="Banner Image" className="w-full h-[400px] object-cover" />
+          <Image src={BannerImage2} alt="Banner Image" className="w-full h-[70vh] object-cover" />
         </SwiperSlide>
       </Swiper>
 

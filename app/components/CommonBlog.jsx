@@ -3,10 +3,11 @@ import React from 'react'
 import BlogImg from '../../public/blog.jpg'
 import { GoPerson } from 'react-icons/go'
 import CommonHead from './CommonHead'
+import Link from 'next/link'
 
 export default function CommonBlog() {
   return (
-    <div className='w-[45%]'>
+    <Link href="/blog" className='w-[45%] cursor-pointer'>
         <div className='overflow-hidden rounded-lg w-full h-[180px] cursor-pointer group'>
         <Image src={BlogImg} width={500} height={100} alt='blog' className='w-full h-full object-cover group-hover:scale-125 duration-500'/>
     </div>
@@ -25,7 +26,7 @@ export default function CommonBlog() {
         </div>
 
         <CommonHead className='text-xl' Heading='Proper way to apply perfumes 2025'/>
-    </div>
+    </Link>
   )
 }
 
