@@ -14,9 +14,8 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const [active, setActive] = useState(false); 
-
-  const pathname = usePathname(); 
+  const [active, setActive] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setActive(false);
@@ -36,10 +35,7 @@ export default function Header() {
       setResults(data.products);
     };
 
-    const delay = setTimeout(() => {
-      getProducts();
-    }, 400);
-
+    const delay = setTimeout(getProducts, 400);
     return () => clearTimeout(delay);
   }, [query]);
 
@@ -63,7 +59,6 @@ export default function Header() {
       </header>
 
       <div className="container flex items-center justify-between">
-        {/* Navigation */}
         <nav className="flex items-center gap-4 w-[25%] justify-between py-6">
           <List link="/" list="Home" />
           <List link="/shop" list="Shop" />
@@ -72,7 +67,6 @@ export default function Header() {
           <List link="/contact" list="Contact" />
         </nav>
 
-        {/* Logo */}
         <Link href={'/'}>
           <Image src="/logo.jpg" alt="Logo" width={140} height={50} />
         </Link>
@@ -91,7 +85,6 @@ export default function Header() {
             <CiSearch className="text-2xl" />
           </div>
 
-          {/* Dropdown */}
           {active && results.length > 0 && (
             <div className="absolute top-14 w-full bg-white shadow-lg rounded-lg p-3 z-50">
               {results.map((item) => (
@@ -99,7 +92,7 @@ export default function Header() {
                   key={item.id}
                   href={`/shop/${item.id}`}
                   className="flex items-center gap-3 p-2 hover:bg-gray-100 rounded-lg"
-                  onClick={() => setActive(false)} 
+                  onClick={() => setActive(false)}
                 >
                   <img src={item.thumbnail} className="w-12 h-12 rounded" />
                   <p className="text-gray-800">{item.title}</p>
@@ -109,7 +102,6 @@ export default function Header() {
           )}
         </div>
 
-        {/* Icons */}
         <div className="flex items-center justify-center gap-3 text-2xl">
           <Link href={'/login'}><GoPerson /></Link>
           <FaRegHeart />

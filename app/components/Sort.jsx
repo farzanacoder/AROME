@@ -1,21 +1,38 @@
-import React from 'react'
+"use client";
 
-export default function Sort() {
+import { useRouter, useSearchParams } from "next/navigation";
+
+const Sort = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const limit = Number(searchParams.get("limit")) || 10;
+  const skip = Number(searchParams.get("skip")) || 0;
+
+  const handleChange = (e) => {
+    const newLimit = Number(e.target.value);
+    router.push(`?limit=${newLimit}&skip=0`);
+  };
+
   return (
-    <div className='flex justify-between mb-10'>
-        <div className='bg-amber-200'>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, voluptatum.
-        </div>
-
-        <div className='flex gap-7'>
-            <select className='border-2 border-[#ededed] p-2 rounded-lg' name="" id="">
-            <option value="">Sort by :</option>
-            <option value="price-low-to-high">Price: Low to High</option>
-            <option value="price-high-to-low">Price: High to Low</option>
-            <option value="newest-first">Newest First</option>
-        </select>
+    <div className="flex gap-7 justify-end mb-10 ">
+      <label htmlFor="limit" className="mr-2 text-gray-700 font-medium">
+        Sort by :
+      </label>
+      <select
+        id="limit"
+        value={limit}
+        onChange={handleChange}
+        className=" px-3 py-1 text-gray-700 cursor-pointer border-2 border-[#ededed] p-2 rounded-lg"
+      >
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </select>
         <h1>9 products</h1>
-        </div>
     </div>
-  )
-}
+  );
+};
+
+export default Sort;
