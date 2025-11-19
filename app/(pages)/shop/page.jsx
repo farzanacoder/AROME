@@ -4,25 +4,34 @@ import ScentVideo from "../../layouts/ScentVideo";
 import BestSeller from "../../layouts/BestSeller";
 import Sort from "../../components/Sort";
 import Link from "next/link";
-import Pagination from "../../components/Pagination";
+import Paginations from "../../components/Pagination";
+
+
+
+async function getProducts(limit, skip) {
+  const res = await fetch(
+    `https://dummyjson.com/products?limit=${limit}&skip=${skip}`,
+    { next: { revalidate: 60 } } 
+  );
+  return res.json();
+}
+
+
 
 export default async function shop({ searchParams }) {
 
-  // Get limit & skip from URL query
-  const limit = Number(searchParams?.limit) || 6;
-  const skip = Number(searchParams?.skip) || 0;
+const limit = await searchParams
+  console.log(limit);
 
-  // Fetch products 
-  const res = await fetch(
-    `https://dummyjson.com/products?limit=${limit}&skip=${skip}`,
-    { next: { revalidate: 60 } }
-  );
+  const skip = await searchParams
+  console.log(skip);
+  
+  const data = await getProducts(limit.limit, skip.skip);
+  const products = data.products || [];
 
-  const data = await res.json();
-  const products = data.products;
 
-  console.log("limit:", limit);
-  console.log("skip:", skip);
+
+  
 
   return (
     <section className="mt-20 ">
@@ -52,7 +61,7 @@ export default async function shop({ searchParams }) {
         </div>
       </div>
 
-      <Pagination totalItems={data.total} currentSkip={skip} limit={limit} />
+      <Paginations totalItems={data.total} currentSkip={skip} limit={limit} />
 
       <ScentVideo />
       <BestSeller />

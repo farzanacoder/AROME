@@ -1,10 +1,9 @@
-"use client";
-
+"use client"
+import { Pagination } from 'antd';
 import React from "react";
-import ReactPaginate from "react-paginate";
 import { useRouter, useSearchParams } from "next/navigation";
 
-const Pagination = ({ totalItems, currentSkip, limit }) => {
+const Paginations = ({ totalItems, currentSkip, limit }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -18,22 +17,20 @@ const Pagination = ({ totalItems, currentSkip, limit }) => {
 
   if (pageCount <= 1) return null;
 
+const onShowSizeChange = (current, pageSize) => {
+    console.log(current, pageSize);
+};  
+
+
+
   return (
-    <div className="flex justify-center mt-10">
-      <ReactPaginate
-        previousLabel={"◀ Prev"}
-        nextLabel={"Next ▶"}
-        pageCount={pageCount}
-        forcePage={currentPage}
-        onPageChange={handlePageClick}
-        containerClassName={"flex gap-2"}
-        pageClassName={"px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 cursor-pointer"}
-        activeClassName={"bg-blue-500 text-white"}
-        previousClassName={"px-4 py-2 rounded bg-gray-300 hover:bg-gray-400 cursor-pointer"}
-        nextClassName={"px-4 py-2 rounded bg-gray-300 hover:bg-gray-400 cursor-pointer"}
-      />
+    <div className="flex justify-center mt-10 mb-20">
+  <Pagination  onChange={onShowSizeChange} align="start" defaultCurrent={1} total={50} />
     </div>
   );
 };
 
-export default Pagination;
+export default Paginations;
+
+
+
