@@ -3,34 +3,33 @@ import { Pagination } from 'antd';
 import React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-const Paginations = ({ totalItems, currentSkip, limit }) => {
+const Paginations = ({ totalItems = 0, currentSkip = 0, limit = 10 }) => {
   const router = useRouter();
-  const searchParams = useSearchParams();
 
-  const pageCount = Math.ceil(totalItems / limit);
-  const currentPage = Math.floor(currentSkip / limit);
+  const safeLimit = Number(limit) || 10;
+  const safeSkip = Number(currentSkip) || 0;
+  const safeTotal = Number(totalItems) || 0;
 
-  const handlePageClick = (selected) => {
-    const newSkip = selected.selected * limit;
-    router.push(`?limit=${limit}&skip=${newSkip}`);
+  const currentPage = Math.floor(safeSkip / safeLimit) + 1;
+
+  const handlePageChange = (page, pageSize) => {
+    const newSkip = (page - 1) * pageSize;
+    router.push(`?limit=${pageSize}&skip=${newSkip}`);
   };
 
-  if (pageCount <= 1) return null;
-
-const onShowSizeChange = (current, pageSize) => {
-    console.log(current, pageSize);
-};  
-
-
+  if (safeTotal <= safeLimit) return null;
 
   return (
     <div className="flex justify-center mt-10 mb-20">
-  <Pagination  onChange={onShowSizeChange} align="start" defaultCurrent={1} total={50} />
+      <Pagination
+        current={currentPage}
+        pageSize={safeLimit}
+        total={safeTotal}
+        onChange={handlePageChange}
+        showSizeChanger={false}
+      />
     </div>
   );
 };
 
 export default Paginations;
-
-
-
